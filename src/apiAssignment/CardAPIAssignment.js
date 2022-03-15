@@ -9,8 +9,8 @@ function App() {
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   useEffect(() => {
-    // fetch("https://jsonplaceholder.typicode.com/users")
-    fetch("http://localhost:800/getdata")
+    fetch("https://jsonplaceholder.typicode.com/users")
+      // fetch("http://localhost:800/getdata")
 
       .then(response => {
         return response.json()
@@ -19,7 +19,7 @@ function App() {
         // console.log(response);
         return setuser(response);
       })
-      .catch(()=>console.log("error"))
+      .catch(() => console.log("error"))
   }, [])
 
   useEffect(() => {
@@ -46,19 +46,17 @@ function App() {
                   </Col>
                   <Col xs={9}>
                     <Card.Body align="left">
-                    <Card.Title> <h2>{user.name}</h2></Card.Title>
+                      {/* <Card.Title> <h2>{user.name}</h2></Card.Title>
                     <div><strong>Age:</strong> {user.age}</div>
                     <div><strong>roll no:</strong> {user.rollno ? user.rollno : 'not alloted'}</div>
-                    <div><strong>Phone:</strong> {user.address}</div>
+                    <div><strong>Phone:</strong> {user.address}</div> */}
 
-
-{/* 
                       <Card.Title> <h2>{user.name}</h2></Card.Title>
                       <div><strong>Email:</strong> {user.email}</div>
                       <div><strong>Phone:</strong> {user.phone}</div>
                       <div><strong>Company:</strong>{user.company.name}</div>
                       <div><strong>Website:</strong> {user.website}</div>
-                      <div><strong>Address:</strong> {user.address.street + ', ' + user.address.suite + ', ' + user.address.city + ', ' + user.address.zipcode}</div> */}
+                      <div><strong>Address:</strong> {user.address.street + ', ' + user.address.suite + ', ' + user.address.city + ', ' + user.address.zipcode}</div>
                     </Card.Body>
                   </Col>
                 </Row>
