@@ -1,6 +1,5 @@
 import '../App.css';
 import { Card, Row, Col, Form } from 'react-bootstrap'
-// import { useEffect, useState } from 'react'
 import React from 'react';
 // import Image from './Image';
 export default class CardAPIAssignmemnt2 extends React.Component {
@@ -11,10 +10,7 @@ export default class CardAPIAssignmemnt2 extends React.Component {
       search: '',
     }
   }
-  // const [user, setuser] = useState([])
-  // const [search, setsearch] = useState('');
-  // const [filteredPosts, setFilteredPosts] = useState([]);
-  componentDidMount() {
+   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => {
         return response.json()
@@ -24,25 +20,10 @@ export default class CardAPIAssignmemnt2 extends React.Component {
       })
       .catch((err) => console.log("error"))
   }
-  // useEffect(() => {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then(response => {
-  //       return response.json()
-  //     })
-  //     .then(response => {
-  //       return setuser(response);
-  //     })
-  // }, [])
-
-  // useEffect(() => {
-  //   setFilteredPosts(user.filter((user) => user.name.indexOf(search) !== -1))
-  // }, [user, search]);
+  
   handleSearchChange = (event) => {
     this.setState({ search: event.target.value });
   }
-  // const handleSearchChange = (event) => {
-  //   setsearch(event.target.value);
-  // };
   render() {
     let filteredPosts = this.state.user.filter((item) => item.name.indexOf(this.state.search) !== -1)
     console.log(this.state.user, "jagbir");
