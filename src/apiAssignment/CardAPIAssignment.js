@@ -33,7 +33,11 @@ function App() {
   return (
     <div align="center">
       <div>
+
         <Form.Control type="text" className="cardsize" value={search} onChange={handleSearchChange} placeholder="search by name" />
+
+        <input type="text" className=".container col-lg-7 col-sm-1 col-xs" value={search} onChange={handleSearchChange} placeholder="search by name" />
+
         {filteredPosts.map((user) => {
           return (
             <div key={user._id} className="cardsize">
